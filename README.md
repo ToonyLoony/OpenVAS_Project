@@ -42,7 +42,6 @@ Inputting Credentials and IP:  <br/>
 <img src="https://i.imgur.com/beTCs19.png" height="80%" width="80%" alt="NessusLab"/>
 <br />
 <br />
-
 <h3> Creating Vulnerability Task </h3>
 We have now convyed the target IP and provided credientials. Next we must setup a new Vulnerability task with the information we just listed
 <br />
@@ -58,9 +57,6 @@ Creation of Vulnerability Task:  <br/>
 <br />
 <img src="https://i.imgur.com/lGBAICg.png" height="80%" width="80%" alt="NessusLab"/>
 <h3> Results Overview</h3>
-
-Looking at the results ....
-
 <br/>
 <img src="https://i.imgur.com/rH1dvJS.png" alt="NessusLab"/>
 <br />
@@ -72,9 +68,14 @@ Looking at the results ....
 <br />
 <br />
 
+Looking at the results we can see an array of high severity vulnerabilties. This is somewhat to be expected as the VM im scanning is win2k8 and no updates have been performed on it. There are so many attack vectors for an attacker to choose , ranging from RCE attacks, DOS , SSH & FTP brute froce, the list goes on..
+
+For the following section i will be exploiting one of the vulnerabilties listed on OpenVAS to ultimately demonstrate the consequences of not fixing vulnerabilties
 
 <h3>Exploitation Example</h3>
-Now for this section i will exploiting one of the vulnerability that were listed by OpenVAS. In this exmaple i will be exploiting 'ElasticSearch'
+
+Now the vulnerability i will be exploiting is the 'ElasticSearch EOL exploit | CVE-2014-3120'. I will be using a payload that exploits a remote command execution (RCE) vulnerability in ElasticSearch, exploitable by default on ElasticSearch prior to 1.2.0. The bug is found in the REST API, which does not require authentication, where the search function allows dynamic scripts execution
+
 <img src="https://i.imgur.com/fJYsMme.png" height="80%" width="80%" alt="NessusLab"/>
 <br />
 <br />
@@ -93,13 +94,12 @@ Starting Exploit: <br/>
 BOOM We're IN!: <br/>
 <img src="https://i.imgur.com/LLZW0uK.png" height="80%" width="80%" alt="NessusLab"/>
 <br />
-<br />
-
 Great we successfully managed to get into the system via RCE! 
 
 <h4>Post Exploitation</h4>
-As you can see we have now performed RCE (Remote Code Execution) on the target. For this next section i will demonstrate what a hacker might do once inside a system. I would like to preface by saying this is done to simply demonstrate just how dangerous RCE attacks are and should never be looked over if found in an vulnerability assessment.
-
+As you can see we have now performed RCE (Remote Code Execution) on the target. For this next section i will demonstrate what a hacker might do once inside a system. For this exmaple i created a file on the win2k8 machine called 'Passwords' this contains a file called 'HIDEME'. We will do some basic directory travesal and see whats inside 👀
+<br />
+<br />
 Directory Traversal: <br/>
 <img src="https://i.imgur.com/FG64bF4.png" height="80%" width="80%" alt="NessusLab"/>
 
@@ -120,5 +120,9 @@ Grab the Loot!: <br/>
 <br />
 
 <h4>Conclusion</h4>
-Overall this was just a very short demonstration of me using Nessus, i hope you learnt something and enjoyed :p 
+Overall in this project i wanted to simply demonstrate the power of OpenVAS , whilst also highlighting just how dangerous some of this vulnerabilties can be if not remediated quickly! I hope you enjoyed :p
+
+If you would like to look into the vulnerability i exploited the CVE can be found here https://nvd.nist.gov/vuln/detail/CVE-2014-3120
+
+Thanks you for Reading My Post ❤️
 </p>
