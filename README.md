@@ -68,18 +68,57 @@ Looking at the results ....
 <img src="https://i.imgur.com/ckUFrYc.png" alt="NessusLab"/>
 <br />
 <br />
-Performing Windows Updates:  <br/>
-<img src="" height="80%" width="80%" alt="NessusLab"/>
+<img src="https://i.imgur.com/Zyxa6g0.png" height="80%" width="80%" alt="NessusLab"/>
 <br />
 <br />
 
 
-<h3>Potential remediation</h3>
+<h3>Exploitation Example</h3>
+Now for this section i will exploiting one of the vulnerability that were listed by OpenVAS. In this exmaple i will be exploiting 'ElasticSearch'
+<img src="https://i.imgur.com/fJYsMme.png" height="80%" width="80%" alt="NessusLab"/>
 <br />
 <br />
-<img src="..." alt="NessusLab"/>
+Starting Metasploit Framework: <br/>
+<img src="https://i.imgur.com/WK970A1.png" height="80%" width="80%" alt="NessusLab"/>
 <br />
 <br />
+Configuring Options: <br/>
+<img src="https://i.imgur.com/op9KWd6.png" height="80%" width="80%" alt="NessusLab"/>
+<br />
+<br />
+Starting Exploit: <br/>
+<img src="https://i.imgur.com/jRVZiM1.png" height="80%" width="80%" alt="NessusLab"/>
+<br />
+<br />
+BOOM We're IN!: <br/>
+<img src="https://i.imgur.com/LLZW0uK.png" height="80%" width="80%" alt="NessusLab"/>
+<br />
+<br />
+
+Great we successfully managed to get into the system via RCE! 
+
+<h4>Post Exploitation</h4>
+As you can see we have now performed RCE (Remote Code Execution) on the target. For this next section i will demonstrate what a hacker might do once inside a system. I would like to preface by saying this is done to simply demonstrate just how dangerous RCE attacks are and should never be looked over if found in an vulnerability assessment.
+
+Directory Traversal: <br/>
+<img src="https://i.imgur.com/FG64bF4.png" height="80%" width="80%" alt="NessusLab"/>
+
+Here i go down to C:\\ to view everything. What you may have noticed is we have root privilages and access and can quite literally do anything
+<br />
+<br />
+Traversing to Users/Admin/Desktop: <br/>
+<img src="https://i.imgur.com/mSOCHwA.png" height="80%" width="80%" alt="NessusLab"/>
+<br />
+<br />
+Passwords Directory: <br/>
+<img src="https://i.imgur.com/lsUAKql.png" height="80%" width="80%" alt="NessusLab"/>
+<br />
+<br />
+Grab the Loot!: <br/>
+<img src="https://i.imgur.com/kGdo40q.png" height="80%" width="80%" alt="NessusLab"/>
+<br />
+<br />
+
 <h4>Conclusion</h4>
 Overall this was just a very short demonstration of me using Nessus, i hope you learnt something and enjoyed :p 
 </p>
